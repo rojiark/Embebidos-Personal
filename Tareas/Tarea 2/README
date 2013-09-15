@@ -1,0 +1,10 @@
+Alejandra - David - Ronny
+
+Se presentó un problema para cargar el kernel via tftp y el filesystem via nfs simultaneamente.
+
+El archivo beagle_tftp muestra el kernel cargado via tftp y el error del server nfs:
+	nfs: server 172.21.106.34 not responding, still trying
+
+El archivo beagle_nfs muestra el filesystem siendo cargado exitosamente via nfs.
+
+Los archivos setup_uimage-tftp_fs-nfs.minicom y setup_uimage-sd_fs-nfs.minicom muestran la configuración de las variables de entorno y son enviados por el puerto serial atraves de minicom.

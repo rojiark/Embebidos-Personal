@@ -1,0 +1,383 @@
+U-Boot SPL 2012.04.01 (Jun 25 2013 - 02:44:12)
+Texas Instruments Revision detection unimplemented
+OMAP SD/MMC: 0
+timed out in wait_for_bb: I2C_STAT=1000
+reading u-boot.img
+reading u-boot.img
+
+
+U-Boot 2012.04.01 (Jun 25 2013 - 02:44:12)
+
+OMAP3630/3730-GP ES1.1, CPU-OPP2, L3-165MHz, Max CPU Clock 1 Ghz
+OMAP3 Beagle board + LPDDR/NAND
+I2C:   ready
+DRAM:  512 MiB
+NAND:  0 MiB
+MMC:   OMAP SD/MMC: 0
+*** Warning - readenv() failed, using default environment
+
+In:    serial
+Out:   serial
+Err:   serial
+Beagle xM Rev A
+No EEPROM on expansion board
+Die ID #0fd000011ff00000015739eb08034016
+Net:   Net Initialization Skipped
+No ethernet found.
+Hit any key to stop autobo 0 
+OMAP3 beagleboard.org #setenv bootdelay 3
+OMAP3 beagleboard.org #setenv baudrate 115200
+## Switch baudrate to 115200 bps andpress ENTER ...OMAP3 beagleboard.org #setenv oldbootargs ${bootargs}
+OMAP3 beagleboard.org #bigger 100
+                                 ip=dhcp
+OMAP3 beagleboard.org #setenv autoload no
+OMAP3 beagleboard.org #setenv oldserverip ${serverip}
+OMAP3 beagleboard.org #setenv serverip 172.21.106.34
+OMAP3 beagleboard.org #setenv oldbootfile ${bootfile}
+OMAP3 beagleboard.org #setenv bootfile uImage-beagleboard.bin
+OMAP3 beagleboard.org #setenv oldbootcmd ${bootcmd}
+setenv - set environment variables
+
+Usage:
+setenv name value ...
+    - set environment variable 'name' to 'value ...'
+setenv name
+    - delete environment variable 'name'
+OMAP3 beagleboard.org #setenv bootcmd 'dcache off;usb start;dhcp;setenv serverip 172.21.106.34;tftpboot;bootm'
+OMAP3 beagleboard.org #saveenv
+Saving Environment to NAND...
+Erasing Nand...
+Attempt to erase non page aligned data
+OMAP3 beagleboard.org  boot
+Data (writethrough) Cache is OFF
+(Re)start USB...
+USB:   Register 1313 NbrPorts 3
+USB EHCI 1.00
+scanning bus for devices... 3 USB Device(s) found
+       scanning bus for storage devices... 0 Storage Device(s) found
+       scanning bus for ethernet devices... 1 Ethernet Device(s) found
+Waiting for Ethernet connection... done.
+BOOTP broadcast 1
+*** Unhandled DHCP Option in OFFER/ACK: 44
+*** Unhandled DHCP Option in OFFER/ACK: 46
+*** Unhandled DHCP Option in OFFER/ACK: 44
+*** Unhandled DHCP Option in OFFER/ACK: 46
+DHCP client bound to address 172.21.106.239
+Waiting for Ethernet connection... done.
+Using sms0 device
+TFTP from server 172.21.106.34; our IP address is 172.21.106.239
+Filename 'uImage-beagleboard.bin'.
+Load address: 0x80200000
+Loading: EHCI timed out on TD - token=0x8008d80
+T #################################################################
+         #################################################################
+         #################################################################
+         #################################################################
+         #################################################################
+         #################################################################
+         #################################################################
+         #################################################################
+         #################################################################
+         #################################################################
+         #################
+done
+Bytes transferred = 3413088 (341460 hex)
+## Booting kernel from Legacy Image at 80200000 ...
+   Image Name:   Linux-3.3.7
+   Image Type:   ARM Linux Kernel Image (uncompressed)
+   Data Size:    3413024 Bytes = 3.3 MiB
+   Load Address: 80008000
+   Entry Point:  80008000
+   Verifying Checksum ... OK
+   Loading Kernel Image ... OK
+OK
+
+
+Starting kernel ...
+
+Uncompressing Linux... done, booting the kernel.
+[    0.000000] Booting Linux on physical CPU 0
+[    0.000000] Initializing cgroup subsys cpuset
+[    0.000000] Initializing cgroup subsys cpu
+[    0.000000] Linux version 3.3.7 (jenkins@sdit-build02) (gcc version 4.7.3 20130226 (prerelease) (crosstool-NG linaro-1.13.1-4.7-2013.03-20130313 - 3
+[    0.000000] CPU: ARMv7 Processor [413fc082] revision 2 (ARMv7), cr=10c53c7d
+[    0.000000] CPU: PIPT / VIPT nonaliasing data cache, VIPT aliasing instruction cache
+[    0.000000] Machine: OMAP3 Beagle Board
+[    0.000000] Reserving 12582912 bytes SDRAM for VRAM
+[    0.000000] Memory policy: ECC disabled, Data cache writeback
+[    0.000000] OMAP3630 ES1.1 (l2cache iva sgx neon isp 192mhz_clk )
+[    0.000000] Clocking rate (Crystal/Core/MPU): 26.0/400/600 MHz
+[    0.000000] Built 1 zonelists in Zone order, mobility grouping on.  Total pages: 126720
+[    0.000000] Kernel command line: console=ttyO2,115200n8 rw noinitrd root=/dev/nfs nfsroot=172.21.106.34:/home/david/ti-sdk-beagleboard-06.00.00.00/p
+[    0.000000] PID hash table entries: 2048 (order: 1, 8192 bytes)
+[    0.000000] Dentry cache hash table entries: 65536 (order: 6, 262144 bytes)
+[    0.000000] Inode-cache hash table entries: 32768 (order: 5, 131072 bytes)
+[    0.000000] allocated 1048576 bytes of page_cgroup
+[    0.000000] please try 'cgroup_disable=memory' option if you don't want memory cgroups
+[    0.000000] Memory: 499MB = 499MB total
+[    0.000000] Memory: 498404k/498404k available, 25884k reserved, 0K highmem
+[    0.000000] Virtual kernel memory layout:
+[    0.000000]     vector  : 0xffff0000 - 0xffff1000   (   4 kB)
+[    0.000000]     fixmap  : 0xfff00000 - 0xfffe0000   ( 896 kB)
+[    0.000000]     vmalloc : 0xe0800000 - 0xff000000   ( 488 MB)
+[    0.000000]     lowmem  : 0xc0000000 - 0xe0000000   ( 512 MB)
+[    0.000000]     modules : 0xbf000000 - 0xc0000000   (  16 MB)
+[    0.000000]       .text : 0xc0008000 - 0xc061770c   (6206 kB)
+[    0.000000]       .init : 0xc0618000 - 0xc064e000   ( 216 kB)
+[    0.000000]       .data : 0xc064e000 - 0xc069e800   ( 322 kB)
+[    0.000000]        .bss : 0xc069e824 - 0xc06d8034   ( 231 kB)
+[    0.000000] NR_IRQS:474
+[    0.000000] IRQ: Found an INTC at 0xfa200000 (revision 4.0) with 96 interrupts
+[    0.000000] Total of 96 interrupts on 1 active controller
+[    0.000000] OMAP clockevent source: GPTIMER12 at 32768 Hz
+[    0.000000] sched_clock: 32 bits at 32kHz, resolution 30517ns, wraps every 131071999ms
+[    0.000000] Console: colour dummy device 80x30
+[    0.000183] Calibrating delay loop... 503.12 BogoMIPS (lpj=1966080)
+[    0.032897] pid_max: default: 32768 minimum: 301
+[    0.033081] Mount-cache hash table entries: 512
+[    0.033416] Initializing cgroup subsys cpuacct
+[    0.033447] Initializing cgroup subsys memory
+[    0.033477] Initializing cgroup subsys devices
+[    0.033508] Initializing cgroup subsys freezer
+[    0.033508] Initializing cgroup subsys blkio
+[    0.033538] Initializing cgroup subsys perf_event
+[    0.033599] CPU: Testing write buffer coherency: ok
+[    0.033843] Setting up static identity map for 0x80461c08 - 0x80461c60
+[    0.034545] devtmpfs: initialized
+[    0.036254] omap_hwmod: usbtll_fck: missing clockdomain for usbtll_fck.
+[    0.071960] print_constraints: dummy: 
+[    0.072204] NET: Registered protocol family 16
+[    0.072448] GPMC revision 5.0
+[    0.073852] gpiochip_add: registered GPIOs 0 to 31 on device: gpio
+[    0.073944] OMAP GPIO hardware version 2.5
+[    0.074066] gpiochip_add: registered GPIOs 32 to 63 on device: gpio
+[    0.074249] gpiochip_add: registered GPIOs 64 to 95 on device: gpio
+[    0.074432] gpiochip_add: registered GPIOs 96 to 127 on device: gpio
+[    0.074645] gpiochip_add: registered GPIOs 128 to 159 on device: gpio
+[    0.074829] gpiochip_add: registered GPIOs 160 to 191 on device: gpio
+[    0.075347] omap_mux_init: Add partition: #1: core, flags: 0
+[    0.076568] OMAP3 Beagle Rev: xM Ax/Bx
+[    0.078613] Reprogramming SDRC clock to 400000000 Hz
+[    0.078643] dpll3_m2_clk rate change failed: -22
+[    0.080627]  usbhs_omap: alias fck already exists
+[    0.080749] Found NAND on CS0
+[    0.080749] Registering NAND on CS0
+[    0.081268] hw-breakpoint: debug architecture 0x4 unsupported.
+[    0.084655]  omap-mcbsp.2: alias fck already exists
+[    0.084838]  omap-mcbsp.3: alias fck already exists
+[    0.085998] OMAP DMA hardware revision 5.0
+[    0.094390] bio: create slab <bio-0> at 0
+[    0.095428] SCSI subsystem initialized
+[    0.096923] usbcore: registered new interface driver usbfs
+[    0.097045] usbcore: registered new interface driver hub
+[    0.097198] usbcore: registered new device driver usb
+[    0.097900] omap_i2c omap_i2c.1: bus 1 rev1.4.0 at 2600 kHz
+[    0.100372] twl4030: PIH (irq 7) chaining IRQs 368..375
+[    0.100463] twl4030: power (irq 373) chaining IRQs 376..383
+[    0.100982] twl4030: gpio (irq 368) chaining IRQs 384..401
+[    0.101287] gpiochip_add: registered GPIOs 192 to 211 on device: twl4030
+[    0.103485] print_constraints: VUSB1V5: 1500 mV normal standby
+[    0.103912] print_constraints: VUSB1V8: 1800 mV normal standby
+[    0.104278] print_constraints: VUSB3V1: 3100 mV normal standby
+[    0.107635] twl4030_usb twl4030_usb: Initialized TWL4030 USB module
+[    0.108276] print_constraints: VMMC1: 1850 <--> 3150 mV at 3000 mV normal standby
+[    0.108764] print_constraints: VDAC: 1800 mV normal standby
+[    0.109222] print_constraints: VDVI: 1800 mV normal standby
+[    0.109802] print_constraints: VSIM: 1800 <--> 3000 mV at 1800 mV normal standby
+[    0.110168] omap_i2c omap_i2c.3: bus 3 rev1.4.0 at 100 kHz
+[    0.110992] omap-iommu omap-iommu.0: isp registered
+[    0.111175] Advanced Linux Sound Architecture Driver Version 1.0.24.
+[    0.111846] Bluetooth: Core ver 2.16
+[    0.111907] NET: Registered protocol family 31
+[    0.111938] Bluetooth: HCI device and connection manager initialized
+[    0.111938] Bluetooth: HCI socket layer initialized
+[    0.111968] Bluetooth: L2CAP socket layer initialized
+[    0.111968] Bluetooth: SCO socket layer initialized
+[    0.112243] Switching to clocksource 32k_counter
+[    0.124053] usbhs_omap usbhs_omap: xclk60mhsp1_ck set parentfailed error:-22
+[    0.124084] usbhs_omap usbhs_omap: xclk60mhsp2_ck set parentfailed error:-22
+[    0.124542] musb-hdrc: version 6.0, ?dma?, otg (peripheral+host)
+[    0.125122] musb-hdrc musb-hdrc: USB OTG mode controller at fa0ab000 using DMA, IRQ 92
+[    0.125457] NET: Registered protocol family 2
+[    0.125701] IP route cache hash table entries: 4096 (order: 2, 16384 bytes)
+[    0.126068] TCP established hash table entries: 16384 (order: 5, 131072 bytes)
+[    0.126434] TCP bind hash table entries: 16384 (order: 4, 65536 bytes)
+[    0.126647] TCP: Hash tables configured (established 16384 bind 16384)
+[    0.126647] TCP reno registered
+[    0.126678] UDP hash table entries: 256 (order: 0, 4096 bytes)
+[    0.126708] UDP-Lite hash table entries: 256 (order: 0, 4096 bytes)
+[    0.126953] NET: Registered protocol family 1
+[    0.127319] RPC: Registered named UNIX socket transport module.
+[    0.127349] RPC: Registered udp transport module.
+[    0.127349] RPC: Registered tcp transport module.
+[    0.127349] RPC: Registered tcp NFSv4.1 backchannel transport module.
+[    0.130737] VFS: Disk quotas dquot_6.5.2
+[    0.130798] Dquot-cache hash table entries: 1024 (order 0, 4096 bytes)
+[    0.131378] squashfs: version 4.0 (2009/01/31) Phillip Lougher
+[    0.131683] nfs4filelayout_init: NFSv4 File Layout Driver Registering...
+[    0.131713] JFFS2 version 2.2. (NAND) (SUMMARY)  �© 2001-2006 Red Hat, Inc.
+[    0.132324] msgmni has been set to 973
+[    0.133758] Block layer SCSI generic (bsg) driver version 0.4 loaded (major 253)
+[    0.133850] io scheduler noop registered
+[    0.133850] io scheduler deadline registered
+[    0.133941] io scheduler cfq registered (default)
+[    0.134735] OMAP DSS rev 2.0
+[    0.136871] Serial: 8250/16550 driver, 4 ports, IRQ sharing enabled
+[    0.138275] omap_uart.0: ttyO0 at MMIO 0x4806a000 (irq = 72) is a OMAP UART0
+[    0.138702] omap_uart.1: ttyO1 at MMIO 0x4806c000 (irq = 73) is a OMAP UART1
+[    0.139068] omap_uart.2: ttyO2 at MMIO 0x49020000 (irq = 74) is a OMAP UART2
+[    0.910369] console [ttyO2] enabled
+[    0.914489] omap_uart.3: ttyO3 at MMIO 0x49042000 (irq = 80) is a OMAP UART3
+[    0.930511] brd: module loaded
+[    0.938079] loop: module loaded
+[    0.942993] No NAND device found
+[    0.946594] No NAND device found
+[    0.951019] usbcore: registered new interface driver catc
+[    0.956756] usbcore: registered new interface driver kaweth
+[    0.962615] pegasus: v0.6.14 (2006/09/27), Pegasus/Pegasus II USB Ethernet driver
+[    0.970520] usbcore: registered new interface driver pegasus
+[    0.976531] usbcore: registered new interface driver rtl8150
+[    0.982574] usbcore: registered new interface driver asix
+[    0.988311] usbcore: registered new interface driver cdc_ether
+[    0.994476] usbcore: registered new interface driver dm9601
+[    1.000396] usbcore: registered new interface driver smsc95xx
+[    1.006500] usbcore: registered new interface driver gl620a
+[    1.012420] usbcore: registered new interface driver net1080
+[    1.018402] usbcore: registered new interface driver plusb
+[    1.024200] usbcore: registered new interface driver rndis_host
+[    1.030487] usbcore: registered new interface driver cdc_subset
+[    1.036773] usbcore: registered new interface driver zaurus
+[    1.042694] usbcore: registered new interface driver MOSCHIP usb-ethernet driver
+[    1.050994] ehci_hcd: USB 2.0 'Enhanced' Host Controller (EHCI) Driver
+[    1.057983] _regulator_get: ehci-omap.0 supply hsusb0 not found, using dummy regulator
+[    1.066375] _regulator_get: ehci-omap.0 supply hsusb1 not found, using dummy regulator
+[    3.088928] ehci-omap ehci-omap.0: OMAP-EHCI Host Controller
+[    3.095275] ehci-omap ehci-omap.0: new USB bus registered, assigned bus number 1
+[    3.103179] ehci-omap ehci-omap.0: irq 77, io mem 0x48064800
+[    3.120239] ehci-omap ehci-omap.0: USB 2.0 started, EHCI 1.00
+[    3.126342] usb usb1: New USB device found, idVendor=1d6b, idProduct=0002
+[    3.133483] usb usb1: New USB device strings: Mfr=3, Product=2, SerialNumber=1
+[    3.141082] usb usb1: Product: OMAP-EHCI Host Controller
+[    3.146667] usb usb1: Manufacturer: Linux 3.3.7 ehci_hcd
+[    3.152221] usb usb1: SerialNumber: ehci-omap.0
+[    3.157684] hub 1-0:1.0: USB hub found
+[    3.161651] hub 1-0:1.0: 3 ports detected
+[    3.190521] Initializing USB Mass Storage driver...
+[    3.195770] usbcore: registered new interface driver usb-storage
+[    3.202087] USB Mass Storage support registered.
+[    3.207305] mousedev: PS/2 mouse device common for all mice
+[    3.214385] input: twl4030_pwrbutton as /devices/platform/omap/omap_i2c.1/i2c-1/1-0049/twl4030_pwrbutton/input/input0
+[    3.226043] i2c /dev entries driver
+[    3.230133] Linux media interface: v0.10
+[    3.234313] Linux video capture interface: v2.00
+[    3.239837] OMAP Watchdog Timer Rev 0x31: initial timeout 60 sec
+[    3.246246] Bluetooth: HCI UART driver ver 2.2
+[    3.250885] Bluetooth: HCI H4 protocol initialized
+[    3.255920] Bluetooth: HCI BCSP protocol initialized
+[    3.261169] Bluetooth: HCILL protocol initialized
+[    3.266082] Bluetooth: HCIATH3K protocol initialized
+[    3.271423] usbcore: registered new interface driver btusb
+[    3.277435] cpuidle: using governor ladder
+[    3.281738] cpuidle: using governor menu
+[    3.507141] usbcore: registered new interface driver usbhid
+[    3.513031] usbhid: USB HID core driver
+[    3.517211] usb 1-2: new high-speed USB device number 2 using ehci-omap
+[    3.524658] usbcore: registered new interface driver snd-usb-audio
+[    3.532012] OMAP3 Beagle/Devkit8000 SoC init
+[    3.616149] asoc: twl4030-hifi <-> omap-mcbsp-dai.1 mapping ok
+[    3.625946] ALSA device list:
+[    3.629089]   #0: omap3beagle
+[    3.632202] oprofile: hardware counters not available
+[    3.637512] oprofile: using timer interrupt.
+[    3.642211] TCP cubic registered
+[    3.645629] NET: Registered protocol family 17
+[    3.650329] NET: Registered protocol family 15
+[    3.655059] lib80211: common routines for IEEE802.11 drivers
+[    3.661010] Registering the dns_resolver key type
+[    3.666015] VFP support v0.3: implementor 41 architecture 3 part 30 variant c rev 3
+[    3.674072] ThumbEE CPU extension supported.
+[    3.682220] omap3_idle_init: core off state C7 disabled due to i583
+[    3.689147] sr_init: No PMIC hook to init smartreflex
+[    3.694641] smartreflex smartreflex.0: omap_sr_probe: SmartReflex driver initialized
+[    3.702941] smartreflex smartreflex.1: omap_sr_probe: SmartReflex driver initialized
+[    3.711181] SmartReflex Class3 initialized
+[    3.719909] clock: disabling unused clocks to save power
+[    3.726531] registered taskstats version 1
+[    3.731597] fbcvt: 640x480@60: CVT Name - .307M3-R
+[    3.744934] Console: switching to colour frame buffer device 80x30
+[    3.760589] usb 1-2: New USB device found, idVendor=0424, idProduct=9514
+[    3.767639] usb 1-2: New USB device strings: Mfr=0, Product=0, SerialNumber=0
+[    3.775299] regulator_init_complete: VDAC: incomplete constraints, leaving on
+[    3.783996] input: gpio-keys as /devices/platform/gpio-keys/input/input1
+[    3.791503] drivers/rtc/hctosys.c: unable to open rtc device (rtc0)
+[    3.798492] hub 1-2:1.0: USB hub found
+[    3.802886] hub 1-2:1.0: 5 ports detected
+[    3.965270] mmc0: host does not support reading read-only switch. assuming write-enable.
+[    3.979217] mmc0: new high speed SDHC card at address e624
+[    3.985504] mmcblk0: mmc0:e624 SU04G 3.69 GiB 
+[    3.999755]  mmcblk0: p1 p2
+[    4.097106] usb 1-2.1: new high-speed USB device number 3 using ehci-omap
+[    4.222625] usb 1-2.1: New USB device found, idVendor=0424, idProduct=ec00
+[    4.229858] usb 1-2.1: New USB device strings: Mfr=0, Product=0, SerialNumber=0
+[    4.240692] smsc95xx v1.0.4
+[    4.326416] smsc95xx 1-2.1:1.0: eth0: register 'smsc95xx' at usb-ehci-omap.0-2.1, smsc95xx USB 2.0 Ethernet, f2:90:80:4d:eb:41
+[    6.414245] smsc95xx 1-2.1:1.0: eth0: link up, 100Mbps, full-duplex, lpa 0x45E1
+[    6.440673] Sending DHCP requests ., OK
+[    7.167694] IP-Config: Got DHCP answer from 172.21.106.2, my address is 172.21.106.244
+[    7.176544] IP-Config: Complete:
+[    7.179931]      device=eth0, addr=172.21.106.244, mask=255.255.255.0, gw=172.21.106.1,
+[    7.188079]      host=172.21.106.244, domain=estudiantes.ie.itcr.ac.cr, nis-domain=(none),
+[    7.196777]      bootserver=172.21.106.2, rootserver=172.21.106.34, rootpath=
+[   22.671234] VFS: Mounted root (nfs filesystem) on device 0:15.
+[   22.678314] devtmpfs: mounted
+[   22.681884] Freeing init memory: 216K
+INIT: version 2.88 booting
+Starting udev
+[   23.741271] udev[68]: starting version 164
+[   33.011199] nfs: server 172.21.106.34 not responding, still trying
+[   37.401733] nfs: server 172.21.106.34 not responding, still trying
+[   41.792236] nfs: server 172.21.106.34 not responding, still trying
+[   46.182891] nfs: server 172.21.106.34 not responding, still trying
+[   50.573455] nfs: server 172.21.106.34 not responding, still trying
+[   59.354827] nfs: server 172.21.106.34 not responding, still trying
+[   61.995330] ------------[ cut here ]------------
+[   62.000213] WARNING: at net/sched/sch_generic.c:256 dev_watchdog+0x130/0x224()
+[   62.007781] NETDEV WATCHDOG: eth0 (smsc95xx): transmit queue 0 timed out             
+[   62.014831] Modules linked in:                                                       
+[   62.018066] [<c0012274>] (unwind_backtrace+0x0/0xe0) from [<c002d92c>] (warn_slowpath_common+0x4c/0x64)
+[   62.027923] [<c002d92c>] (warn_slowpath_common+0x4c/0x64) from [<c002d9c4>] (warn_slowpath_fmt+0x2c/0x3c)
+[   62.037994] [<c002d9c4>] (warn_slowpath_fmt+0x2c/0x3c) from [<c03b8b28>] (dev_watchdog+0x130/0x224)
+[   62.047515] [<c03b8b28>] (dev_watchdog+0x130/0x224) from [<c00370e8>] (run_timer_softirq+0x160/0x1fc)
+[   62.057189] [<c00370e8>] (run_timer_softirq+0x160/0x1fc) from [<c00328e0>] (__do_softirq+0x80/0x10c)
+[   62.066802] [<c00328e0>] (__do_softirq+0x80/0x10c) from [<c0032ccc>] (irq_exit+0x40/0x8c)
+[   62.075378] [<c0032ccc>] (irq_exit+0x40/0x8c) from [<c000e158>] (handle_IRQ+0x64/0x84)
+[   62.083709] [<c000e158>] (handle_IRQ+0x64/0x84) from [<c00084f4>] (omap3_intc_handle_irq+0x48/0x50)
+[   62.093200] [<c00084f4>] (omap3_intc_handle_irq+0x48/0x50) from [<c000d500>] (__irq_svc+0x40/0x60)
+[   62.102600] Exception stack(0xc064ff18 to 0xc064ff60)
+[   62.107910] ff00:                                                       000ee6b2 00000000
+[   62.116516] ff20: 000ee6b2 00000000 00000002 00000000 c06566b0 00000001 00000003 00000001
+[   62.125091] ff40: c065646c 00000001 00000000 c064ff60 c001cfd0 c001cfdc 60070053 ffffffff
+[   62.133697] [<c000d500>] (__irq_svc+0x40/0x60) from [<c001cfdc>] (omap3_enter_idle+0x114/0x148)
+[   62.142852] [<c001cfdc>] (omap3_enter_idle+0x114/0x148) from [<c001d168>] (omap3_enter_idle_bm+0x158/0x1b4)
+[   62.153076] [<c001d168>] (omap3_enter_idle_bm+0x158/0x1b4) from [<c03321fc>] (cpuidle_idle_call+0x94/0x110)
+[   62.163330] [<c03321fc>] (cpuidle_idle_call+0x94/0x110) from [<c000e3e0>] (cpu_idle+0x54/0xbc)
+[   62.172363] [<c000e3e0>] (cpu_idle+0x54/0xbc) from [<c0618730>] (start_kernel+0x29c/0x2f4)
+[   62.181060] ---[ end trace e1b81471c6602111 ]---
+[   68.136108] nfs: server 172.21.106.34 not responding, still trying
+[   76.917114] nfs: server 172.21.106.34 not responding, still trying
+[   85.698486] nfs: server 172.21.106.34 not responding, still trying
+[   94.479736] nfs: server 172.21.106.34 not responding, still trying
+[  103.260864] nfs: server 172.21.106.34 not responding, still trying
+[  112.042297] nfs: server 172.21.106.34 not responding, still trying
+[  120.823608] nfs: server 172.21.106.34 not responding, still trying
+[  129.604614] nfs: server 172.21.106.34 not responding, still trying
+[  138.386047] nfs: server 172.21.106.34 not responding, still trying
+[  147.167327] nfs: server 172.21.106.34 not responding, still trying
+
+
+
+
+
+
+
+

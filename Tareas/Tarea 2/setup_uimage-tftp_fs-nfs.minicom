@@ -1,0 +1,83 @@
+timeout 300
+verbose on
+
+expect {
+    "stop autoboot:"
+}
+send ""
+
+expect {
+    "OMAP3 beagleboard.org #"
+}
+send "setenv bootdelay 3"
+
+expect {
+    "OMAP3 beagleboard.org #"
+}
+send "setenv baudrate 115200"
+
+expect {
+    "ENTER ..."
+}
+send ""
+
+expect {
+    "OMAP3 beagleboard.org #"
+}
+send "setenv oldbootargs $\{bootargs\}"
+
+expect {
+    "OMAP3 beagleboard.org #"
+}
+send "setenv bootargs console=ttyO2,115200n8 rw noinitrd \c"
+send "root=/dev/nfs nfsroot=\c"
+send "172.21.104.90:\c"
+send "/home/david/ti-sdk-beagleboard-06.00.00.00/targetNFS\c"
+send ",nolock,rsize=1024,wsize=1024 \c"
+send "vram=12M omapfb.mode=dvi:640x480MR-16@60 omapdss.def_disp=dvi \c"
+send "ip=dhcp"
+expect {
+    "OMAP3 beagleboard.org #"
+}
+send "setenv autoload no"
+
+expect {
+    "OMAP3 beagleboard.org #"
+}
+send "setenv oldserverip $\{serverip\}"
+
+expect {
+    "OMAP3 beagleboard.org #"
+}
+send "setenv serverip 172.21.104.90"
+
+expect {
+    "OMAP3 beagleboard.org #"
+}
+send "setenv oldbootfile $\{bootfile\}"
+
+expect {
+    "OMAP3 beagleboard.org #"
+}
+send "setenv bootfile uImage-beagleboard.bin"
+
+expect {
+    "OMAP3 beagleboard.org #"
+}
+send "setenv oldbootcmd $\{bootcmd\}"
+
+expect {
+    "OMAP3 beagleboard.org #"
+}
+send "setenv bootcmd 'dcache off;usb start;dhcp;setenv serverip 172.21.104.90;tftpboot;bootm'"
+
+expect {
+    "OMAP3 beagleboard.org #"
+}
+send "saveenv"
+
+expect {
+    "OMAP3 beagleboard.org #"
+}
+send "boot"
+
