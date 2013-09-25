@@ -1,6 +1,6 @@
 
 #Original: David Diaz, Modificaciones: Ronny Jimenez
-#Las modificaciones instalan las dependencias corrigiendo los errores que salen con respecto a los make[1], make[2] y make[3]
+#Las modificaciones instalan las dependencias corrigiendo los errores que salen con respecto a los make[1], make[2] y make[3], asi como permite al usuario entrar a instalar las dependencias o salir del programa (En caso de que su ejecucion fuera un error)
 
 read -p "Desea instalar las dependencias y los plugins de mad: (Y/N)" OPCION
 echo ""
@@ -62,7 +62,7 @@ case $OPCION in
 
 	echo "Instalacion completa";;
 
-	"n") echo "Saliendo de la aplicacion......."; 
+	"N") echo "Saliendo de la aplicacion......."; 
 	     echo "..."
 	     echo "......"
 	     echo "........"
